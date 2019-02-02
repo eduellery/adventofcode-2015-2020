@@ -1,8 +1,11 @@
 lines = open('day02.in').read().split()
 
-total = 0
+area = 0
+ribbon = 0
 for line in lines:
     x, y, z = sorted(map(int, line.split('x')))
-    total += 2 * (x * y + x * z + y * z) + x * y
+    area += 2 * (x * y + x * z + y * z) + x * y
+    ribbon += x + x + y + y + x * y * z
 
-print('P1:', total)
+print('P1:', area)
+print('P2:', ribbon)
