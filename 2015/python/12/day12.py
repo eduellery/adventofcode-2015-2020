@@ -14,5 +14,5 @@ def find(i, filter_red = False):
             return 0
     return find(list(i.values()), filter_red)
 
-print(find(loads(json)))
-print(find(loads(json), True))
+print('P1:',find(loads(json)))
+print('P2:',find(loads(json), True))

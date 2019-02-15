@@ -26,5 +26,5 @@ for path in itertools.permutations(cities):
     if current > maximum:
         maximum = current
 
-print('P1', minimum)
-print('P2', maximum)
+print('P1:', minimum)
+print('P2:', maximum)
