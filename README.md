@@ -1,6 +1,7 @@
 # Advent of Code
 
-My answers for Advent of Code
+My answers for Advent of Code. I'm improving the code before uploading.
+Completeness per language is defined below.
 
 ## 2015
 
