@@ -24,7 +24,9 @@ public class Day06 {
 				}
 				seen.put(values, p1);
 			}
+			int p2 = p1 - seen.get(values);
 			System.out.println("P1: " + p1);
+			System.out.println("P2: " + p2);
 		} catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
