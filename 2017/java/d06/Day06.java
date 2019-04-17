@@ -13,7 +13,7 @@ public class Day06 {
 			IntStream stream = Arrays.stream(Files.lines(Paths.get("d06/day06.in")).findFirst().get().split("\\s")).mapToInt(Integer::valueOf);
 			Supplier<IntStream> supplier = () -> stream;
 		        List<Integer> values = supplier.get().boxed().collect(Collectors.toList());
-			HashMap<List<Integer>, Integer> seen = new HashMap();
+			HashMap<List<Integer>, Integer> seen = new HashMap<List<Integer>,Integer>();
 			int p1 = 0;
 			seen.put(values, p1);
 			while (p1 < Integer.MAX_VALUE) {

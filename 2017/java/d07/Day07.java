@@ -11,9 +11,9 @@ public class Day07 {
 		try {
 			Scanner in = new Scanner(new File("d07/day07.in"));
 			String p1 = null;
-			List<String> all = new ArrayList();
-			List<String> nonRoot = new ArrayList();
-			Map<Disc, Disc> discs = new HashMap(); // Silly but useful as Set doesn't have a get.
+			List<String> all = new ArrayList<String>();
+			List<String> nonRoot = new ArrayList<String>();
+			Map<Disc, Disc> discs = new HashMap<Disc, Disc>(); // Silly but useful as Set doesn't have a get.
 			while(in.hasNext()) {
 				String line = in.nextLine();
 				Supplier<Stream<String>> supplier = () -> Arrays.stream(line.split(",\\s|\\s"));
@@ -70,7 +70,7 @@ public class Day07 {
 
 		private String name = null;
 		private int weight = 0;
-		private List<Disc> children = new ArrayList();
+		private List<Disc> children = new ArrayList<Disc>();
 
 		public Disc (String name) {
 			this.name = name;
