@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 
-echo
 for f in *; do
 	if [[ -d $f ]]; then
 		d=${f:1}
