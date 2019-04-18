@@ -26,15 +26,3 @@ while len(frontier) > 0:
 
 print('P1:', seen[31, 39])
 print('P2:', len([seen[x] for x in seen.keys() if seen[x] <= 50]))
-
-#def is_open(x, y):
-#    bin_sum = bin(x*x + 3*x + 2*x*y + y + y*y + puzzle_input)
-#    return bin_sum.count('1')
-
-#print('  0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9')
-#for y in range(40):
-#    print(str(y % 10), '', end='')
-#    for x in range(40):
-#        v = '. ' if is_open(x, y) % 2 == 0 else '# '
-#        print(v, end='')
-#    print()
