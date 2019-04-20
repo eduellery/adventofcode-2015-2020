@@ -22,6 +22,7 @@ public class Day08 {
 			commands.put("dec", (x, y) -> x - y);
 			Scanner in = new Scanner(new File("d08/day08.in"));
 			Map<String, Integer> registers = new HashMap<>();
+			int max = 0;
 			while(in.hasNext()) {
 				String line = in.nextLine();
 				String[] tokens = line.split("\\s");
@@ -35,9 +36,13 @@ public class Day08 {
 				if (comparisons.get(comparison).test(registers.getOrDefault(testReg, 0), testAmount)) {
 					int current = registers.get(reg);
 					registers.put(reg, commands.get(command).applyAsInt(current, amount));
+					if (registers.get(reg) > max) {
+						max = registers.get(reg);
+					}
 				}
 			}
 			System.out.println("P1: " + Collections.max(registers.values()));
+			System.out.println("P2: " + max);
 		} catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
