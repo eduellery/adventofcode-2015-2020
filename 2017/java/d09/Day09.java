@@ -54,10 +54,15 @@ public class Day09 {
 					case CLOSE:
 						m.addScore(m.decLevel());
 						break;
+					case GARBAGE:
+						if (current == State.GARBAGE) {
+							m.incGarbage();
+						}
 				}
 				m.setState(next);
 			});
 			System.out.println("P1: " + m.getScore());
+			System.out.println("P2: " + m.getGarbage());
 		} catch(Exception e) {
 			System.err.println(e.getMessage());
 		}
@@ -68,6 +73,7 @@ public class Day09 {
 		private State state = State.OTHER;
 		private int level = 0;
 		private int score = 0;
+		private int garbage = 0;
 
 		public State getState() {
 			return this.state;
@@ -91,6 +97,14 @@ public class Day09 {
 
 		public int getScore() {
 			return this.score;
+		}
+
+		public void incGarbage() {
+			this.garbage++;
+		}
+
+		public int getGarbage() {
+			return this.garbage;
 		}
 	}
 }
