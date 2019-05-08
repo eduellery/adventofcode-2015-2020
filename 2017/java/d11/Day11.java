@@ -24,16 +24,27 @@ public class Day11 {
 			String[] directions = Files.lines(Paths.get("d11/day11.in")).findFirst().get().split(",");
 			int x = 0;
 			int y = 0;
+			int dist = 0;
+			int furthest = 0;
 			for (String direction : directions) {
 				HexDir current = HexDir.valueOf(direction);
 				x += current.dx;
 				y += current.dy;
+				dist = hexDist(x, y);
+				if (dist > furthest) {
+					furthest = dist;
+				}
 			}
-			System.out.println("P1: " + (Math.abs(x) + Math.abs(y) + Math.abs(x + y))/2);
+			System.out.println("P1: " + dist);
+			System.out.println("P2: " + furthest);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.err.println(e.getMessage());
 		}
+	}
+
+	private static int hexDist(int x, int y) {
+		return (Math.abs(x) + Math.abs(y) + Math.abs(x + y))/2;
 	}
 
 }
