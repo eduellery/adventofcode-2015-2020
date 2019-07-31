@@ -1,4 +1,5 @@
 # Advent of Code
+[![CircleCI](https://circleci.com/gh/eduellery/adventofcode.svg?style=svg)](https://circleci.com/gh/eduellery/adventofcode)
 
 My answers for Advent of Code. I'm improving the code before uploading.
 Completeness per language is defined below.
