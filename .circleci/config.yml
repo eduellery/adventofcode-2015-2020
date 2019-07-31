@@ -12,5 +12,4 @@ jobs:
             . venv/bin/activate
       - run:
           name: Running tests
-          command: |
-            . run_all.sh
+          command: sh ./run_all.sh
