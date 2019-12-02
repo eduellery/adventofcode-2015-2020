@@ -4,7 +4,7 @@ base_fuel = 0
 total_fuel = 0
 
 def calculate_fuel(mass):
-    return int(int(mass) / 3 - 2)
+    return int(mass) // 3 - 2
 
 for mass in mass_list:
     fuel = calculate_fuel(mass)

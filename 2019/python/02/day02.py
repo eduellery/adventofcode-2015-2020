@@ -5,8 +5,7 @@ def compute_p_zero(noun, verb, opcodes):
     opcodes[2] = verb
     i = 0
     while True:
-        opcode = opcodes[i]
-        i1, i2, i3 = [opcodes[x] for x in [i+1, i+2, i+3]]
+        opcode, i1, i2, i3 = opcodes[i:i+4]
         if opcode == 1:
             opcodes[i3] = opcodes[i1] + opcodes[i2]
         elif opcode == 2:
@@ -23,7 +22,7 @@ for noun in range(100):
     for verb in range(100):
         r = compute_p_zero(noun, verb, values.copy())
         if r == 19690720:
-            P2 = str(noun) + str(verb)
+            P2 = 100 * noun + verb
             break
 
 print('P1:', P1)
