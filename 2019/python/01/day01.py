@@ -1,4 +1,4 @@
-mass_list = list(open('day01.in').read().split())
+mass_list = list(open('01/day01.in').read().split())
 
 base_fuel = 0
 total_fuel = 0

@@ -1,26 +1,12 @@
-values = list(map(int,(open('day02.in').read().split(','))))
+import intcode
 
-def compute_p_zero(noun, verb, opcodes):
-    opcodes[1] = noun
-    opcodes[2] = verb
-    i = 0
-    while True:
-        opcode, i1, i2, i3 = opcodes[i:i+4]
-        if opcode == 1:
-            opcodes[i3] = opcodes[i1] + opcodes[i2]
-        elif opcode == 2:
-            opcodes[i3] = opcodes[i1] * opcodes[i2]
-        else:
-            assert opcode == 99
-            break
-        i += 4
-    return opcodes[0]
+values = list(map(int,(open('02/day02.in').read().split(','))))
 
-P1 = compute_p_zero(12, 2, values.copy())
+P1 = intcode.IntCode().compute(12, 2, values.copy())
 
 for noun in range(100):
     for verb in range(100):
-        r = compute_p_zero(noun, verb, values.copy())
+        r = intcode.IntCode().compute(noun, verb, values.copy())
         if r == 19690720:
             P2 = 100 * noun + verb
             break
