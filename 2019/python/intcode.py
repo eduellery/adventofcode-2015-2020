@@ -1,18 +1,30 @@
 class IntCode:
 
-    def compute(self, noun, verb, opcodes):
-        opcodes[1] = noun
-        opcodes[2] = verb
+    def compute(self, opcodes, noun=None, verb=None):
+        # Legacy
+        if noun:
+            opcodes[1] = int(noun)
+        if verb:
+            opcodes[2] = int(verb)
         i = 0
         while True:
-            opcode, i1, i2, i3 = opcodes[i:i+4]
+            digits = [int(x) for x in str(opcodes[i])]
+            opcode = (0 if len(digits) == 1 else digits[-2]) * 10 + digits[-1]
+            digits = digits[:-2]
             if opcode == 1:
-                opcodes[i3] = opcodes[i1] + opcodes[i2]
+                while len(digits) < 3:
+                    digits = [0] + digits
+                opcode, i1, i2, i3 = opcodes[i:i+4]
+                opcodes[i3] = (i1 if digits[2] == 1 else opcodes[i1]) + (i2 if digits[1] == 1 else opcodes[i2])
+                i += 4
             elif opcode == 2:
-                opcodes[i3] = opcodes[i1] * opcodes[i2]
+                while len(digits) < 3:
+                    digits = [0] + digits
+                opcode, i1, i2, i3 = opcodes[i:i+4]
+                opcodes[i3] = (i1 if digits[2] == 1 else opcodes[i1]) * (i2 if digits[1] == 1 else opcodes[i2])
+                i += 4
             else:
                 assert opcode == 99
                 break
-            i += 4
         return opcodes[0]
 
