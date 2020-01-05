@@ -2,12 +2,13 @@ import intcode
 
 values = list(map(int,(open('02/day02.in').read().split(','))))
 
-P1 = intcode.IntCode().compute(values.copy(), 12, 2)
+opcodes, _ = intcode.IntCode().compute(values.copy(), 12, 2)
+P1 = opcodes[0]
 
 for noun in range(100):
     for verb in range(100):
-        r = intcode.IntCode().compute(values.copy(), noun, verb)
-        if r == 19690720:
+        r, _ = intcode.IntCode().compute(values.copy(), noun, verb)
+        if r[0] == 19690720:
             P2 = 100 * noun + verb
             break
 
