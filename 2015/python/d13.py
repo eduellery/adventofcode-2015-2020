@@ -1,7 +1,7 @@
 import re
 import itertools
 
-lines = filter(None, open('day13.in').read().split('\n'))
+lines = filter(None, open('d13.in').read().split('\n'))
 
 match = {}
 people = set()

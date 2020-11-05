@@ -1,4 +1,4 @@
-chars = list(open('day01.in').read())
+chars = list(open('d01.in').read())
 
 count = 0
 index = 0

@@ -1,11 +1,10 @@
 #!/usr/bin/env sh
 
-for f in *; do
-    if [[ -d $f ]]; then
-	echo Day $f;
-	cd $f;
-	python day$f.py;
-	cd ..;
-	echo
-    fi
+for file in *; do
+	if [[ $file == *.py ]]; then
+		day=${file:1:2};
+		echo Day $day;
+		python d$day.py;
+		echo
+	fi
 done

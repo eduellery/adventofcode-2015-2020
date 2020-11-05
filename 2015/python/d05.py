@@ -1,6 +1,6 @@
 import re
 
-lines = open('day05.in').read().split()
+lines = open('d05.in').read().split()
 
 # Lazy thinking...
 

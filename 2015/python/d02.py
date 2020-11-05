@@ -1,4 +1,4 @@
-lines = open('day02.in').read().split()
+lines = open('d02.in').read().split()
 
 area = 0
 ribbon = 0

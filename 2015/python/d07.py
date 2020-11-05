@@ -1,6 +1,6 @@
 import re
 
-lines = open('day07.in').read().split('\n')
+lines = open('d07.in').read().split('\n')
 
 calc = dict()
 

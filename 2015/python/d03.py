@@ -1,4 +1,4 @@
-values = open('day03.in').read().strip()
+values = open('d03.in').read().strip()
 
 houses = {}
 i, j = 0, 0

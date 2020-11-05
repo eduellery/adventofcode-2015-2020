@@ -1,6 +1,6 @@
 import re
 
-lines = open('day08.in').read().split()
+lines = open('d08.in').read().split()
 
 count = 0
 decod = 0

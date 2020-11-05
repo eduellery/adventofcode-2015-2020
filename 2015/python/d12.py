@@ -1,6 +1,6 @@
 from json import loads
 
-json = open('day12.in').read()
+json = open('d12.in').read()
 
 def find(i, filter_red = False):
     if type(i) == int:

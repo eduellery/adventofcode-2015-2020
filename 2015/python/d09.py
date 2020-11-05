@@ -1,7 +1,7 @@
 import re
 import itertools
 
-lines = filter(None, open('day09.in').read().split('\n'))
+lines = filter(None, open('d09.in').read().split('\n'))
 
 distances = {}
 cities = set()

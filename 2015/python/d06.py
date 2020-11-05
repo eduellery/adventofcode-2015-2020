@@ -1,6 +1,6 @@
 import re
 
-lines = open('day06.in').read().split('\n')
+lines = open('d06.in').read().split('\n')
 
 lights = {}
 x, y = 0, 0
