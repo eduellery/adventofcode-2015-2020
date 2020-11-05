@@ -6,11 +6,11 @@ basementIndex = 0
 
 for c in chars:
     index +=1
-    if c is '(':
+    if c == '(':
         count += 1
-    elif c is ')':
+    elif c == ')':
         count -= 1
-    if basementIndex is 0 and count is -1:
+    if basementIndex == 0 and count == -1:
         basementIndex = index
 
 print('P1:', count)

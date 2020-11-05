@@ -20,7 +20,7 @@ for line in lines:
                 lights[x,y] = 'Off'
         elif action == 'toggle':
             for x, y in coords:
-                if lights[x,y] is 'On':
+                if lights[x,y] == 'On':
                     lights[x,y] = 'Off'
                 else:
                     lights[x,y] = 'On'
@@ -28,7 +28,7 @@ for line in lines:
 on = 0
 for x in range(1000):
     for y in range(1000):
-        if lights[x,y] is 'On':
+        if lights[x,y] == 'On':
             on += 1
 
 print('P1:', on)

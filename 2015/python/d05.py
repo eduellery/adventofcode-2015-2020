@@ -16,16 +16,16 @@ for line in lines:
             vowels += 1
         if char is prev:
             duplicates += 1
-        if prev is 'a' and char is 'b':
+        if prev == 'a' and char == 'b':
             forbidden +=1
-        elif prev is 'c' and char is 'd':
+        elif prev == 'c' and char == 'd':
             forbidden += 1
-        elif prev is 'p' and char is 'q':
+        elif prev == 'p' and char == 'q':
             forbidden += 1
-        elif prev is 'x' and char is 'y':
+        elif prev == 'x' and char == 'y':
             forbidden += 1
         prev = char
-    if forbidden is 0 and duplicates > 0 and vowels >= 3:
+    if forbidden == 0 and duplicates > 0 and vowels >= 3:
         nice += 1
 
 print('P1:', nice)
