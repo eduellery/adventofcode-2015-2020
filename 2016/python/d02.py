@@ -11,13 +11,13 @@ translate = {3: 1, 7: 2, 8: 3, 9: 4, 11: 5, 12: 6, 13: 7, 14: 8, 15: 9, 17: 10, 
 
 
 def compute(value, char):
-    if char is 'U' and value not in [1, 2, 3]:
+    if char == 'U' and value not in [1, 2, 3]:
         value -= 3
-    elif char is 'D' and value not in [7, 8, 9]:
+    elif char == 'D' and value not in [7, 8, 9]:
         value += 3
-    elif char is 'L' and value not in [1, 4, 7]:
+    elif char == 'L' and value not in [1, 4, 7]:
         value -= 1
-    elif char is 'R' and value not in [3, 6, 9]:
+    elif char == 'R' and value not in [3, 6, 9]:
         value += 1
     return value
 
