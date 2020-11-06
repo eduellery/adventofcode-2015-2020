@@ -1,4 +1,4 @@
-values = open('day09.in').read().strip()
+values = open('d09.in').read().strip()
 
 def len_decompress(val, rec):
     if '(' not in val:

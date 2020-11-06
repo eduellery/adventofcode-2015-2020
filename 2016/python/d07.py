@@ -1,6 +1,6 @@
 import re
 
-values = open('day07.in').read().splitlines()
+values = open('d07.in').read().splitlines()
 
 p1 = 0;
 

@@ -1,4 +1,4 @@
-values = open('day12.in').read().splitlines()
+values = open('d12.in').read().splitlines()
 
 instructions = []
 

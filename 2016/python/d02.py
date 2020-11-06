@@ -1,4 +1,4 @@
-values = filter(None, open('day02.in').read().split('\n'))
+values = filter(None, open('d02.in').read().split('\n'))
 
 result1 = ''
 index1 = 5

@@ -1,4 +1,4 @@
-values = open('day08.in').read().splitlines()
+values = open('d08.in').read().splitlines()
 
 h, w = 6, 50
 grid = [[0] * w for _ in range(h)]

@@ -1,6 +1,6 @@
 import re, collections, string
 
-values = open('day04.in').read()
+values = open('d04.in').read()
 
 def caesar_cipher(shift):
     az = string.ascii_lowercase

@@ -1,6 +1,6 @@
 from collections import Counter
 
-values = open('day06.in').read().splitlines()
+values = open('d06.in').read().splitlines()
 
 count = [Counter(x).most_common() for x in zip(*values)]
 

@@ -1,4 +1,4 @@
-values = open('day01.in').read().replace('\n', '').split(', ')
+values = open('d01.in').read().replace('\n', '').split(', ')
 
 position = 0 + 0j
 direction = 0 + 1j

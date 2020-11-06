@@ -3,7 +3,7 @@ import re, collections
 bot = collections.defaultdict(list)
 output = collections.defaultdict(list)
 
-values = open('day10.in').read().splitlines()
+values = open('d10.in').read().splitlines()
 
 pipeline = {}
 

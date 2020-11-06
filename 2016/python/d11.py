@@ -1,6 +1,6 @@
 import re
 
-values = open('day11.in').read().splitlines()
+values = open('d11.in').read().splitlines()
 
 p1 = [0, 0, 0, 0]
 i = 0

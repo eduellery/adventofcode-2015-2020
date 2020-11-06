@@ -1,4 +1,4 @@
-values = open('day09.in').read().strip()
+values = open('d09.in').read().strip()
 
 # If we ever need the string. Since we don't, no use for it
 # Too slow, don't run it

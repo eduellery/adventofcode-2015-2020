@@ -1,4 +1,4 @@
-values = open('day03.in').read().splitlines()
+values = open('d03.in').read().splitlines()
 
 def count_triangles(values):
     triangles = 0

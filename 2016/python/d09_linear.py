@@ -1,4 +1,4 @@
-values = open('day09.in').read().strip()
+values = open('d09.in').read().strip()
 
 i, p1 = 0, 0
 size = len(values)
