@@ -1,5 +1,3 @@
-package d06;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -10,7 +8,7 @@ public class Day06 {
 
 	public static void main(String args[]) {
 		try {
-			IntStream stream = Arrays.stream(Files.lines(Paths.get("d06/day06.in")).findFirst().get().split("\\s")).mapToInt(Integer::valueOf);
+			IntStream stream = Arrays.stream(Files.lines(Paths.get("d06.in")).findFirst().get().split("\\s")).mapToInt(Integer::valueOf);
 			Supplier<IntStream> supplier = () -> stream;
 		        List<Integer> values = supplier.get().boxed().collect(Collectors.toList());
 			HashMap<List<Integer>, Integer> seen = new HashMap<List<Integer>,Integer>();

@@ -1,5 +1,3 @@
-package d08;
-
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -20,7 +18,7 @@ public class Day08 {
 			Map<String, ToIntBiFunction<Integer, Integer>> commands = new HashMap<>();
 			commands.put("inc", (x, y) -> x + y);
 			commands.put("dec", (x, y) -> x - y);
-			Scanner in = new Scanner(new File("d08/day08.in"));
+			Scanner in = new Scanner(new File("d08.in"));
 			Map<String, Integer> registers = new HashMap<>();
 			int max = 0;
 			while(in.hasNext()) {

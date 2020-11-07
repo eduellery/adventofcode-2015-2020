@@ -1,5 +1,3 @@
-package d07;
-
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -9,7 +7,7 @@ public class Day07 {
 
 	public static void main(String args[]) {
 		try {
-			Scanner in = new Scanner(new File("d07/day07.in"));
+			Scanner in = new Scanner(new File("d07.in"));
 			String p1 = null;
 			List<String> all = new ArrayList<String>();
 			List<String> nonRoot = new ArrayList<String>();

@@ -1,10 +1,11 @@
 #!/usr/bin/env sh
 
-for f in *; do
-	if [[ -d $f ]]; then
-		d=${f:1}
-		echo Day $d
-		javac -Xlint:unchecked $f/Day$d.java && java $f/Day$d
+for file in *; do
+	if [[ $file == *.java ]]; then
+		day=${file:3:2};
+		echo Day $day;
+		javac -Xlint:unchecked Day$day.java && java Day$day
 		echo
-    fi
+	fi
 done
+

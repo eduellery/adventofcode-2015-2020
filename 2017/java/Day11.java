@@ -1,5 +1,3 @@
-package d11;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -21,7 +19,7 @@ public class Day11 {
 
 	public static void main(String args[]) {
 		try {
-			String[] directions = Files.lines(Paths.get("d11/day11.in")).findFirst().get().split(",");
+			String[] directions = Files.lines(Paths.get("d11.in")).findFirst().get().split(",");
 			int x = 0;
 			int y = 0;
 			int dist = 0;

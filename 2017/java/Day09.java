@@ -1,5 +1,3 @@
-package d09;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -40,7 +38,7 @@ public class Day09 {
 	public static void main(String args[]) {
 		try {
 			Machine m = new Machine();
-			Stream<Character> stream = Files.lines(Paths.get("d09/day09.in")).findFirst().get().chars().mapToObj(c -> (char) c);
+			Stream<Character> stream = Files.lines(Paths.get("d09.in")).findFirst().get().chars().mapToObj(c -> (char) c);
 			stream.forEach(c -> {
 				State current = m.getState();
 				if (current == State.IGNORE) {

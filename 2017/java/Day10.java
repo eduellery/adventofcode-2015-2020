@@ -1,5 +1,3 @@
-package d10;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -15,8 +13,8 @@ public class Day10 {
 		try {
 			IntStream list = IntStream.range(0, MAX);
 			IntStream hash = IntStream.range(0, MAX);
-			List<Integer> lengths = Arrays.stream(Files.lines(Paths.get("d10/day10.in")).findFirst().get().split(",")).mapToInt(Integer::valueOf).boxed().collect(Collectors.toList());
-			byte[] bytes = Files.readAllBytes(Paths.get("d10/day10.in"));
+			List<Integer> lengths = Arrays.stream(Files.lines(Paths.get("d10.in")).findFirst().get().split(",")).mapToInt(Integer::valueOf).boxed().collect(Collectors.toList());
+			byte[] bytes = Files.readAllBytes(Paths.get("d10.in"));
 			List<Integer> fullLengths = IntStream.concat(
 					IntStream.range(0, bytes.length).map(i -> bytes[i]),
 					Arrays.asList(suffix).stream().mapToInt(Integer::intValue))

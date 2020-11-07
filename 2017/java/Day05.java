@@ -1,5 +1,3 @@
-package d05;
-
 import java.io.*;
 import java.nio.file.*;
 import java.util.*;
@@ -10,7 +8,7 @@ public class Day05 {
 
 	public static void main(String args[]) {
 		try {
-			Stream<String> stream = Files.lines(Paths.get("d05/day05.in"));
+			Stream<String> stream = Files.lines(Paths.get("d05.in"));
 			Supplier<Stream<String>> supplier = () -> stream;
 			int[] values = supplier.get().mapToInt(Integer::parseInt).toArray();
 			int p1 = 0, idx = 0;

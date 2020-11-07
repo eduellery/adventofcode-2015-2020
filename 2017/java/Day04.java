@@ -1,5 +1,3 @@
-package d04;
-
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -9,7 +7,7 @@ public class Day04 {
 
 	public static void main(String args[]) {
 		try {
-			Scanner in = new Scanner(new File("d04/day04.in"));
+			Scanner in = new Scanner(new File("d04.in"));
 			int p1 = 0;
 			int p2 = 0;
 			while(in.hasNext()) {

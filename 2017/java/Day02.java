@@ -1,5 +1,3 @@
-package d02;
-
 import java.io.*;
 import java.util.*;
 import java.util.function.*;
@@ -9,7 +7,7 @@ public class Day02 {
 
 	public static void main(String args[]) {
 		try {
-			Scanner in = new Scanner(new File("d02/day02.in"));
+			Scanner in = new Scanner(new File("d02.in"));
 			int sum1 = 0;
 			int sum2 = 0;
 			while(in.hasNext()) {

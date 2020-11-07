@@ -1,5 +1,3 @@
-package d01;
-
 import java.io.*;
 import java.util.*;
 
@@ -7,7 +5,7 @@ public class Day01 {
 
 	public static void main(String args[]) {
 		try {
-			Scanner in = new Scanner(new File("d01/day01.in"));
+			Scanner in = new Scanner(new File("d01.in"));
 			String input = in.nextLine();
 			int sum1 = 0;
 			int sum2 = 0;
