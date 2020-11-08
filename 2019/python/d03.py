@@ -1,4 +1,4 @@
-valuesa, valuesb = list(open('03/day03.in').read().split())
+valuesa, valuesb = list(open('d03.in').read().split())
 
 dx = {'R': 1, 'L': -1, 'U': 0, 'D': 0}
 dy = {'R': 0, 'L': 0, 'U': 1, 'D': -1}

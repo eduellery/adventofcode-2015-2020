@@ -1,6 +1,6 @@
 import intcode
 
-values = list(map(int,(open('02/day02.in').read().split(','))))
+values = list(map(int,(open('d02.in').read().split(','))))
 
 opcodes, _ = intcode.IntCode().compute(values.copy(), 12, 2)
 P1 = opcodes[0]
