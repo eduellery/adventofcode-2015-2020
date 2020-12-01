@@ -2,23 +2,23 @@ using DelimitedFiles
 using Base.Iterators
 
 values = readdlm("d01.in", '\t', Int, '\n')
+length = size(values, 1)
 sum = 2020
+P1 = 0
+P2 = 0
 
-function matching_2sum(numbers, sum)
-    for (a, b) in product(numbers, numbers)
-        if a + b == sum
-            return a * b
+for i in 1:length
+    for j in i+1:length
+        if values[i] + values[j] == sum
+            global P1 = values[i] * values[j]
+        end
+        for k in j+1:length
+            if values[i] + values[j] + values[k] == sum
+                global P2 = values[i] * values[j] * values[k]
+            end
         end
     end
 end
 
-function matching_3sum(numbers, sum)
-    for (a, b, c) in product(numbers, numbers, numbers)
-        if a + b +c == sum
-            return a * b * c
-        end
-    end
-end
-
-println("P1: ", matching_2sum(values, sum))
-println("P2: ", matching_3sum(values, sum))
+println("P1: ", P1)
+println("P2: ", P2)
