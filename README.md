@@ -20,4 +20,12 @@ Completeness per language is defined below.
 
 ## 2018
 
+* C++ (incomplete)
+
+## 2019
+
 * Python (incomplete)
+
+## 2020
+
+* Julia (ongoing)
