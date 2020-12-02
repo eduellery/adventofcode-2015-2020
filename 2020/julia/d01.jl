@@ -1,5 +1,4 @@
 using DelimitedFiles
-using Base.Iterators
 
 values = readdlm("d01.in", '\t', Int, '\n')
 length = size(values, 1)
