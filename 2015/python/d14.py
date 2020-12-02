@@ -20,5 +20,10 @@ for line in lines:
             distance += int(speed)
         amount += 1
     reindeers[reindeer] = distance
+    steps = itertools.cycle([int(speed)]*int(duration) + [0]*int(rest))
+    history[reindeer] = list(itertools.accumulate(next(steps) for _ in range(total_duration)))
+
+scored = [i for a in zip(*history.values()) for i, v in enumerate(a) if v==max(a)]
 
 print("P1:", max(reindeers.values()))
+print("P2:", max(collections.Counter(scored).values()))
