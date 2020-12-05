@@ -2,7 +2,6 @@ using DelimitedFiles
 
 lines = readlines("d05.in")
 
-P1 = 0
 const rows, columns = 127, 7
 
 function findposition(line, upper, lowdelimiter)
@@ -19,13 +18,16 @@ function findposition(line, upper, lowdelimiter)
     return lower
 end
 
+seats = []
+
 for line in lines
     row = findposition(line[1:end-3], rows, 'F')
     col = findposition(line[8:end], columns, 'L')
     id = row * 8 + col
-    if id > P1
-        global P1 = id
-    end
+    append!(seats, id)
 end
 
-println("P1: ", P1)
+allseats = Set(minimum(seats) : maximum(seats))
+
+println("P1: ", maximum(seats))
+println("P2: ", only(setdiff(allseats, seats)))
