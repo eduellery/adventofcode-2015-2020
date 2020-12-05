@@ -6,26 +6,27 @@
 My answers for Advent of Code. I'm improving the code before uploading.
 Completeness per language is defined below.
 
-## 2015
+## [2015](https://adventofcode.com/2015)
 
-* Python (incomplete)
+* Python :star: x 28
 
-## 2016
+## [2016](https://adventofcode.com/2016)
 
-* Python (incomplete)
+* Python :star: x 26
 
-## 2017
+## [2017](https://adventofcode.com/2017)
 
-* Java
+* Java :star: x 50
 
-## 2018
+## [2018](https://adventofcode.com/2018)
 
-* C++ (incomplete)
+* C++ :star: x 32
 
-## 2019
+## [2019](https://adventofcode.com/2019)
 
-* Python (incomplete)
+* Python :star: x 10
 
-## 2020
+## [2020](https://adventofcode.com/2020)
 
-* Julia (ongoing)
+* Julia :star: x 10
+
