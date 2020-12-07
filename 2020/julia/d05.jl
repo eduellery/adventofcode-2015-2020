@@ -1,5 +1,3 @@
-using DelimitedFiles
-
 lines = readlines("d05.in")
 
 const rows, columns = 127, 7

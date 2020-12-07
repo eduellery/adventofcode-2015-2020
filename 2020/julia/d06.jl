@@ -1,27 +1,18 @@
-lines = readlines("d06.in")
-append!(lines, [""])
+function readinput(filename)
+  map(group -> filter(!isempty, split(group, "\n")), split(read(filename, String), "\n\n"))
+end
 
 P1, P2 = 0, 0
-groupanswers = Set()
-individualanswers = []
 
-for line in lines
-    if line == ""
-        global P1 += length(groupanswers)
-        for answer in individualanswers
-            intersect!(groupanswers, answer)
-        end
-        global P2 += length(groupanswers)
-        global groupanswers = Set()
-        global individualanswers = []
-    else
-        answer = Set()
-        for char in line
-            push!(groupanswers, char)
-            push!(answer, char)
-        end
-        push!(individualanswers, answer)
+groups = readinput("d06.in")
+
+for group in groups
+    global P1 += length(Set(join(group)))
+    commonanswers = Set(first(group))
+    for answers in group
+      intersect!(commonanswers, answers)
     end
+    global P2 += length(commonanswers)
 end
 
 println("P1: ", P1)

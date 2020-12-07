@@ -1,10 +1,10 @@
-using DelimitedFiles
+function readinput(filename)
+  map(group -> filter(!isempty, split(replace(group, "\n" => " "), " ")), split(read(filename, String), "\n\n"))
+end
 
-lines = readlines("d04.in")
-append!(lines, [""])
+passports = readinput("d04.in")
 
-P1 = 0
-P2 = 0
+P1, P2 = 0, 0
 
 function lenientvalid(passport)
     valid = true
@@ -51,21 +51,16 @@ function strictvalid(passport)
     return valid
 end
 
-passport = Dict()
-for line in lines
-    if line == ""
-        if lenientvalid(passport)
-            global P1 += 1
-            if strictvalid(passport)
-                global P2 += 1
-            end
-        end
-        global passport = Dict()
-    else
-        words = split(line)
-        for word in words
-            k, v = split(word, ':')
-            global passport[k] = v
+for passportlist in passports
+    passport = Dict()
+    for field in passportlist
+        k, v = split(field, ':')
+        passport[k] = v
+    end
+    if lenientvalid(passport)
+        global P1 += 1
+        if strictvalid(passport)
+            global P2 += 1
         end
     end
 end

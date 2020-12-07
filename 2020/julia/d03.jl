@@ -1,6 +1,4 @@
-using DelimitedFiles
-
-lines = readdlm("d03.in", ' ', String)
+lines = readlines("d03.in")
 const height, width = size(lines, 1), length(lines[1])
 
 function trees(right, down)

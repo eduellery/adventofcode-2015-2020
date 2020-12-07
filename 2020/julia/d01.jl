@@ -1,19 +1,21 @@
-using DelimitedFiles
+function readinput(filename)
+    map(value -> parse(Int, value), readlines(filename))
+end
 
-values = readdlm("d01.in", '\t', Int, '\n')
-length = size(values, 1)
+lines = readinput("d01.in")
+length = size(lines, 1)
+
 sum = 2020
-P1 = 0
-P2 = 0
+P1, P2 = 0, 0
 
 for i in 1:length
     for j in i+1:length
-        if values[i] + values[j] == sum
-            global P1 = values[i] * values[j]
+        if lines[i] + lines[j] == sum
+            global P1 = lines[i] * lines[j]
         end
         for k in j+1:length
-            if values[i] + values[j] + values[k] == sum
-                global P2 = values[i] * values[j] * values[k]
+            if lines[i] + lines[j] + lines[k] == sum
+                global P2 = lines[i] * lines[j] * lines[k]
             end
         end
     end
