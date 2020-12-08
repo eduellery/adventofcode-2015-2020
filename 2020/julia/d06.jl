@@ -1,5 +1,5 @@
 function readinput(filename)
-  map(group -> filter(!isempty, split(group, "\n")), split(read(filename, String), "\n\n"))
+    map(group -> filter(!isempty, split(group, "\n")), split(read(filename, String), "\n\n"))
 end
 
 P1, P2 = 0, 0
@@ -10,7 +10,7 @@ for group in groups
     global P1 += length(Set(join(group)))
     commonanswers = Set(first(group))
     for answers in group
-      intersect!(commonanswers, answers)
+        intersect!(commonanswers, answers)
     end
     global P2 += length(commonanswers)
 end

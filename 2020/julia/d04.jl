@@ -1,5 +1,5 @@
 function readinput(filename)
-  map(group -> filter(!isempty, split(replace(group, "\n" => " "), " ")), split(read(filename, String), "\n\n"))
+    map(group -> filter(!isempty, split(replace(group, "\n" => " "), " ")), split(read(filename, String), "\n\n"))
 end
 
 passports = readinput("d04.in")

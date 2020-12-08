@@ -28,12 +28,12 @@ function containingbags(invertedgraph, desiredbag)
 end
 
 function countbags(baggraph, desiredbag)
-  innerbags = baggraph[desiredbag]
-  if isempty(innerbags)
-    return 1
-  else
-    return 1 + sum(n * countbags(baggraph, innerbag) for (n, innerbag) in innerbags)
-  end
+    innerbags = baggraph[desiredbag]
+    if isempty(innerbags)
+        return 1
+    else
+        return 1 + sum(n * countbags(baggraph, innerbag) for (n, innerbag) in innerbags)
+    end
 end
 
 for line in lines
