@@ -40,25 +40,44 @@ function changedirection(direction, clockwise, angle)
     return newdirection
 end
 
-function move(values, direction = "E", position = (0, 0))
+function changewaypoint(waypoint, clockwise, angle)
+    newwaypoint = deepcopy(waypoint)
+    factor = clockwise ? get(right, angle, nothing) : get(left, angle, nothing)
+    if angle in [90, 270]
+        newwaypoint = reverse(waypoint)
+    end
+    newwaypoint = map(*, factor, newwaypoint)
+    return newwaypoint
+end
+
+function move(values, direction = "E", position = (0, 0), waypoint = (10, 1))
+    correctposition = deepcopy(position)
     for value in values
         m = match(r"^(\w)(\d+)", value)
         (char, digit) = m.captures[1], parse(Int, m.captures[2])
         if char == "F"
             position = step(position, digit, get(dd, direction, nothing))
+            correctdirection = map(*, (digit, digit), waypoint)
+            correctposition = map(+, correctposition, correctdirection)
         elseif char == "L"
             direction = changedirection(direction, false, digit)
+            waypoint = changewaypoint(waypoint, false, digit)
         elseif char == "R"
             direction = changedirection(direction, true, digit)
+            waypoint = changewaypoint(waypoint, true, digit)
         else
             position = step(position, digit, get(dd, char, nothing))
+            waypoint = step(waypoint, digit, get(dd, char, nothing))
         end
     end
-    return direction, position
+    return direction, waypoint, position, correctposition
 end
 
 values = readlines("d12.in")
 dd = Dict([("N", (0, 1)), ("S", (0, -1)), ("E", (1, 0)), ("W", (-1, 0))])
-direction, position = move(values)
+right = Dict([(90, (1, -1)), (180, (-1, -1)), (270, (-1, 1))])
+left = Dict([(270, (1, -1)), (180, (-1, -1)), (90, (-1, 1))])
+_, _, position, correctposition = move(values)
 
 println("P1: ", sum(broadcast(abs, position)))
+println("P2: ", sum(broadcast(abs, correctposition)))
