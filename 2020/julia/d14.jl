@@ -17,18 +17,18 @@ function masks(mask)
     return (~and, or, x)
 end
 
-function allcombinations(x, floating)
+function allcombinations(addr, floating)
     if floating == 0
-        return x
+        return addr
+    else
+        attempt = UInt(1)
+        while true
+            if attempt == floating & attempt
+                return cat(allcombinations(addr, floating &= ~attempt), allcombinations(xor(addr, attempt), floating &= ~attempt); dims=1)
+            end
+            attempt <<= 1
+        end
     end
-    i = 0
-    while floating & UInt(1) == 0
-        i += 1
-        floating >>= 1
-    end
-    floating &= ~UInt(1)
-    floating <<= i
-    return cat(allcombinations(x, floating), allcombinations(xor(x, UInt(1)<<i), floating); dims=1)
 end
 
 function memoryallocation(instructions)
