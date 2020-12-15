@@ -2,32 +2,27 @@ function readinput(filename)
     map(value -> parse(Int, value), split(read(filename, String), ","))
 end
 
-function getvalueat(numbers, position = 2020)
-    dict = Dict{Int,Array{Int}}()
-    last = -1
-    for i in 1:length(numbers)
-        push!(dict, numbers[i] => [i])
-        last = numbers[i]
+function nextitem!(lookup, item, pos)
+    if haskey(lookup, item)
+        next = pos - lookup[item]
+        lookup[item] = pos
+        return next
+    else
+        lookup[item] = pos
+        return 0
     end
-    for i in length(numbers)+1:position
-        if last in keys(dict)
-            value = get(dict, last, nothing)
-            if length(value) == 1
-                last = value[1] - i + 1
-            else
-                last = value[end] - value[end-1]
-            end
-            if last in keys(dict)
-                append!(get(dict, last, nothing), i)
-            else
-                push!(dict, last => [i])
-            end
-        end
+end
+
+function iterate(input, turns=2020)
+    next = pop!(input)
+    lookup = Dict{Int, Int}((val, index) for (index, val) in enumerate(input))
+    for i in (1+length(input)):(turns-1)
+        next = nextitem!(lookup, next, i)
     end
-    return last
+    return next
 end
 
 numbers = readinput("d15.in")
 
-println("P1: ", getvalueat(numbers))
-println("P2: ", getvalueat(numbers, 30000000))
+println("P1: ", iterate(deepcopy(numbers)))
+println("P2: ", iterate(deepcopy(numbers), 30000000))
