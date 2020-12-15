@@ -28,5 +28,5 @@ Completeness per language is defined below.
 
 ## [2020](https://adventofcode.com/2020)
 
-* Julia :star: x 10
+* Julia :star: x 30
 
