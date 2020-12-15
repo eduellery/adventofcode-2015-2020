@@ -1,5 +1,5 @@
-function readinput(values)
-    return map(x -> split(x, " = "), readlines("d14.in"))
+function readinput(filename)
+    return map(x -> split(x, " = "), readlines(filename))
 end
 
 function masks(mask)
