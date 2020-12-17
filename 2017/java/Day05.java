@@ -1,6 +1,4 @@
-import java.io.*;
 import java.nio.file.*;
-import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
@@ -26,6 +24,7 @@ public class Day05 {
 				idx += jump;
 				p2++;
 			}
+			stream.close();
 			System.out.println("P1: " + p1);
 			System.out.println("P2: " + p2);
 		} catch(Exception e) {
