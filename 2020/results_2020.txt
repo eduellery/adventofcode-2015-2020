@@ -81,4 +81,11 @@ Day 19
 P1: 272
 P2: 374
 
+Day 20
+
+
+Day 21
+P1: 2461
+P2: ltbj,nrfmm,pvhcsn,jxbnb,chpdjkf,jtqt,zzkq,jqnhd
+
 
