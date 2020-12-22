@@ -88,4 +88,8 @@ Day 21
 P1: 2461
 P2: ltbj,nrfmm,pvhcsn,jxbnb,chpdjkf,jtqt,zzkq,jqnhd
 
+Day 22
+P1: 33421
+P2: 33651
+
 
