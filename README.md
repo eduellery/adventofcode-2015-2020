@@ -8,7 +8,7 @@ Completeness per language is defined below.
 
 ## [2015](https://adventofcode.com/2015)
 
-* Python :star: x 28
+* Python :star: x 36
 
 ## [2016](https://adventofcode.com/2016)
 
@@ -28,5 +28,5 @@ Completeness per language is defined below.
 
 ## [2020](https://adventofcode.com/2020)
 
-* Julia :star: x 30
+* Julia :star: x 50
 
