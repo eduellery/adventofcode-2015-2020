@@ -140,6 +140,63 @@ function mountimage(lines)
     return nothing
 end
 
+function combine(tiles)
+    tilessize = length(tiles)
+    side = Int(sqrt(tilessize))
+    lines = []
+    for i in collect(1:side:tilessize)
+        tls = tiles[i:i+side-1]
+        for idx in 1:length(tls[1])
+            push!(lines, join(x[idx] for x in tls))
+        end
+    end
+    return lines
+end
+
+function findmonsters(image)
+    side = length(image[1])
+    count = 0
+    for i in 19:side
+        for j in 1:length(image)-1
+            if image[j][i] == '#'
+                if i < side-1 && all([image[j+1][i + k] == '#' for k in [-18, -13, -12, -7, -6, -1, 0, 1]])
+                    if all([image[j+2][i + k] == '#' for k in [-17, -14, -11, -8, -5, -2]])
+                        count += 1
+                    end
+                end
+            end
+        end
+    end
+    return count
+end
+
+function monsterhunt(image; showimage=false)
+    bordertiles = [i[2][5] for i in image]
+    nobordertiles = [[i[2:end-1] for i in j[2:end-1]] for j in bordertiles]
+
+    bordertiles = combine(bordertiles)
+    nobordertiles = combine(nobordertiles)
+    if showimage
+        println("------BORDER------")
+        println(join(bordertiles, '\n'))
+        println("-----NOBORDER-----")
+        println(join(rotate(bordertiles, 1),'\n'))
+        println("------------------")
+    end
+    total = findmonsters(nobordertiles)
+    total += findmonsters(rotate(nobordertiles, 2))
+    total += findmonsters(rotate(nobordertiles, 3))
+    total += findmonsters(rotate(nobordertiles, 4))
+    total += findmonsters(fliptile(nobordertiles))
+    total += findmonsters(fliptile(rotate(nobordertiles, 2)))
+    total += findmonsters(fliptile(rotate(nobordertiles, 3)))
+    total += findmonsters(fliptile(rotate(nobordertiles, 4)))
+
+    return (count("#",join(nobordertiles)) - total * 15)
+end
+
 lines = readinput("d20.in")
 P1,image = mountimage(lines)
 println("P1: ", P1)
+P2 = monsterhunt(image)
+println("P2: ", P2)
