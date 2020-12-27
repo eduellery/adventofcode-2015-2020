@@ -153,14 +153,35 @@ function combine(tiles)
     return lines
 end
 
-function findmonsters(image)
+function readmonster(filename)
+    lines = readlines(filename)
+    head, offset = -1, -1
+    mid, low = [], []
+    for (i, line) in enumerate(lines)
+        for (j, char) in enumerate(line)
+            if i == 1 && char == '#'
+                head = j
+            elseif i == 2 && char == '#'
+                append!(mid, j - head)
+            elseif i == 3 && char == '#'
+                append!(low, j - head)
+            elseif i != 1 && j > head && j - head > offset
+                offset = j - head
+            end
+        end
+    end
+    return (head, offset, mid, low)
+end
+
+function findmonsters(image, monster="d20.monster")
     side = length(image[1])
+    (head, offset, mid, low) = readmonster(monster)
     count = 0
     for i in 19:side
         for j in 1:length(image)-1
             if image[j][i] == '#'
-                if i < side-1 && all([image[j+1][i + k] == '#' for k in [-18, -13, -12, -7, -6, -1, 0, 1]])
-                    if all([image[j+2][i + k] == '#' for k in [-17, -14, -11, -8, -5, -2]])
+                if i < side-offset && all([image[j+1][i + k] == '#' for k in mid])
+                    if  i < side-offset && all([image[j+2][i + k] == '#' for k in low])
                         count += 1
                     end
                 end
