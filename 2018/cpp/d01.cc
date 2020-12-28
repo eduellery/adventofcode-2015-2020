@@ -30,6 +30,6 @@ int main() {
     }
   }
 
-  cout << result1 << endl;
-  cout << result2 << endl;
+  cout << "P1: " << result1 << endl;
+  cout << "P2: " << result2 << endl;
 }
