@@ -10,7 +10,7 @@ Completeness per language is defined below.
 
 ## [2015](https://adventofcode.com/2015)
 
-* Python :star: x 36
+* Python :star: x 50
 
 ## [2016](https://adventofcode.com/2016)
 
