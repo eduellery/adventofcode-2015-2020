@@ -4,13 +4,13 @@ Completeness per language is defined below.
 
 ** DEPRECATED ** - Remove the repos listed below as I move them to their own repos.
 
-- `Python`, migrate to UV
+- ✔️ `Python`, migrate to UV
 - `Java` and `Julia`, leave as it is
 - `C++`, leave as it is
 
 ## [2015](https://adventofcode.com/2015)
 
-* Python :star: x 50
+* ✔️ Python :star: x 50
 
 ## [2016](https://adventofcode.com/2016)
 
